@@ -1,0 +1,78 @@
+@use '../../utils/' as *;
+
+.tp-ride-counter {
+    & span {
+        & i {
+            font-weight: 600;
+            font-size: 32px;
+            color: var(--tp-white-color);
+            margin-bottom: 12px;
+            font-style: normal;
+
+            @media #{$xs} {
+                font-size: 25px;
+            }
+        }
+    }
+
+    &-item {
+        background: var(--tp-primary-color);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        padding: 16px;
+        width: 100%;
+        height: 132px;
+        @include transition(.3s linear);
+
+        @media #{$xs} {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media #{$sm} {
+            width: 48%;
+            height: 100%;
+        }
+
+        &:hover {
+            @include transform(translateY(-2px));
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+        }
+
+        @media #{$lg,$md} {
+            width: 48%;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &-text {
+        & span {
+            font-weight: 400;
+            font-size: 16px;
+            color: var(--tp-white-color);
+        }
+    }
+
+    &-icon {
+        background: var(--tp-white-color);
+        border-radius: 8px;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        line-height: 48px;
+    }
+
+    &-wrapper {
+        padding: 16px;
+        border-radius: 8px;
+        gap: 16px;
+
+        @media #{$lg,$md,$xs} {
+            flex-wrap: wrap;
+            justify-content: space-around !important;
+        }
+    }
+}

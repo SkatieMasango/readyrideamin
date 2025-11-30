@@ -1,0 +1,79 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  1.1 Back to Top
+/*----------------------------------------*/
+.contentDiv {
+    width: 300px;
+    height: 1000px;
+    background-color: #ff0000;
+}
+
+button.back-to-top {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    color: transparent;
+    clear: both;
+    visibility: hidden;
+    position: fixed;
+    cursor: pointer;
+    display: block;
+    border: none;
+    right: 50px;
+    bottom: 75px;
+    font-size: 0px;
+    outline: 0 !important;
+    z-index: 99;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+
+
+button.back-to-top.show::after,
+button.back-to-top.show::before {
+    visibility: visible;
+}
+
+button.back-to-top::after {
+    border-bottom-color: #fff;
+    position: relative;
+    top: -24px;
+}
+
+button.back-to-top.show {
+    background: var(--tp-grey-color);
+    text-align: center;
+    right: 25px;
+    bottom: 50px;
+    height: 45px;
+    width: 45px;
+    visibility: visible;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    -webkit-box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    -moz-box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    &:hover{
+        background-color: #479EFF;
+        & i{
+            color: #fff;
+            @include transition(.3s linear);
+        }
+    }
+    & i {
+        color: var(--tp-black-color);
+        font-size: 18px;
+    }
+}
+
+button.back-to-top.show:active {
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+}

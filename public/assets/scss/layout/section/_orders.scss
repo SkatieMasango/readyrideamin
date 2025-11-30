@@ -1,0 +1,215 @@
+@use '../../utils/' as *;
+
+.tp-ride {
+    &-driver {
+        &-list {
+            &-item {
+                border-radius: 8px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.40);
+                padding: 8px;
+                background: #153D65;
+                margin-bottom: 12px;
+                @include transition(.3s linear);
+
+                &:hover {
+                    @include transform(translateY(-3px));
+                }
+
+                &:last-child {
+                    box-shadow: 0 2px 4px 0 rgb(0, 0, 0);
+                    margin-bottom: 0;
+                }
+
+                @media #{$xl} {
+                    height: 65px;
+                }
+            }
+        }
+
+        &-info {
+            @media #{$xl} {
+                flex: 0 0 143px;
+            }
+        }
+
+        &-author {
+            &-title {
+                line-height: 0;
+                margin-bottom: 0;
+
+                & a {
+                    color: var(--tp-white-color);
+                    font-family: var(--tp-font-2);
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        &-title {
+            color: var(--tp-white-color);
+            font-family: var(--tp-font-2);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+        }
+
+        &-wrapper {
+            padding: 16px;
+
+            @media #{$xl} {
+                padding: 16px 10px;
+            }
+
+            @media #{$lg} {
+                margin-top: 25px;
+            }
+
+            @media #{$md,$xs} {
+                margin-top: 20px;
+            }
+        }
+
+        &-author {
+            &-rating {
+                & span {
+                    color: var(--tp-white-color);
+                    font-family: var(--tp-font-2);
+                    font-size: 10px;
+                    font-weight: 700;
+                    line-height: 18px;
+
+                    & i {
+                        color: #64748B;
+                        font-family: var(--tp-font-2);
+                        font-size: 10px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-km {
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.12);
+        width: 75px;
+        height: 28px;
+        text-align: center;
+        line-height: 25px;
+
+        & span {
+            color: var(--tp-white-color);
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 20px;
+        }
+    }
+}
+
+.total-orders-card {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        border: 1px solid #EDEEF1;
+        width: 96%;
+        height: 95%;
+        bottom: 20px;
+        left: 16px;
+        border-radius: 7.543px;
+    }
+}
+
+.tp-total-orders {
+    &-tab {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--tp-white-color);
+        padding: 16px;
+        border-radius: 8px 8px 0 0;
+
+
+        @media #{$xs} {
+            flex-wrap: wrap;
+        }
+
+        &-title {
+            color: #24262D;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        &-button {
+            @media #{$xs} {
+                margin-left: 0;
+            }
+        }
+
+        & button {
+            border: none;
+            background: none;
+            color: #687387;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 8px 27px;
+            @include transition(.3s linear);
+
+            @media #{$xs} {
+                padding: 10px;
+            }
+
+            @media #{$sm} {
+                padding: 8px 25px;
+            }
+
+            &:hover {
+                color: #1469B5;
+                border-radius: 8px;
+                background: #F1F7FE;
+            }
+        }
+
+        &-date {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 1px;
+                height: 24px;
+                background: #D7DAE0;
+                top: 0;
+                left: -24px;
+
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+
+            & a {
+                color: #687387;
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            & svg {
+                margin-left: 16px;
+                @include transform(translateY(-2px));
+            }
+        }
+    }
+}
+
+.tp-total-orders-tab-button {
+    @media #{$xl} {
+        margin-left: 0;
+    }
+}

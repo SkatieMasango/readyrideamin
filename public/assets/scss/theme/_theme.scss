@@ -1,0 +1,84 @@
+@use '../utils/' as *;
+
+@import url($font-url);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+}
+
+
+textarea {
+	outline: none;
+	background-color: transparent;
+	height: 150px;
+	width: 100%;
+	line-height: 56px;
+	font-size: 15px;
+	color: var(--tp-common-black);
+	border: 0;
+	border-bottom: 1px solid #57595C;
+	text-transform: uppercase;
+	font-weight: 500;
+
+	&:focus {
+		border-color: var(--tp-common-black);
+
+		&::placeholder {
+			opacity: 1;
+		}
+	}
+
+	&::placeholder {
+		color: var(--tp-common-black);
+	}
+}
+
+
+
+ul {
+	padding: 0;
+	margin: 0;
+
+	li {
+		list-style: none;
+	}
+}
+
+input {
+	outline: none;
+	border: none;
+	background: none;
+	border-bottom: 1px solid;
+	height: 56px;
+	width: 100%;
+}
+
+* ::placeholder {
+	color: var(--tp-common-black);
+	font-size: 15px;
+	opacity: 1;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+::selection {
+	color: #0d6efd;
+	background-color: #212529;
+}

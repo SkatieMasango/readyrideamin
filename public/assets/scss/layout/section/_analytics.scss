@@ -1,0 +1,276 @@
+@use '../../utils/' as *;
+
+.tp-analytics {
+    &-title {
+        font-weight: 500;
+        font-size: 18px;
+        color: var(--tp-black-color);
+
+        &-2 {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--tp-black-color);
+            margin-bottom: 0;
+            margin-left: 8px;
+        }
+    }
+
+    &-number {
+        & span {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--tp-black-color);
+            border: 1px solid #C0DDF7;
+            border-radius: 30px;
+            width: 52px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            display: inline-block;
+        }
+    }
+
+    &-item {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+        background: var(--tp-grey-color);
+        padding: 8px 12px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        @include transition(.3s linear);
+
+        &:hover {
+            box-shadow: 0 2px 4px 0 rgb(0, 0, 0);
+        }
+    }
+
+    &-wrapper {
+        background: var(--tp-white-color);
+        padding: 16px;
+        border-radius: 8px;
+
+        @media #{$xs} {
+            margin-top: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        }
+
+        &-2 {
+            padding: 26px 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px 0 rgba(125, 140, 159, 0.40);
+        }
+
+        &-end {
+            @media #{$lg,$md,$xs} {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    &-bottom {
+        &-right {
+            & strong {
+                color: #1E1B39;
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+
+        &-title {
+            color: var(--tp-heading-color);
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 0;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.tp-ride {
+    &-user {
+        padding: 17px;
+
+        &-text {
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            color: #B3BAC6;
+            margin-bottom: 12px;
+        }
+
+        &-icon {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+            background: var(--tp-navy-blue-color);
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 8px;
+        }
+
+        &-box {
+            box-shadow: 0 2px 4px 0 rgba(125, 140, 159, 0.4);
+            background: var(--tp-white-color);
+            padding: 8px;
+
+            & span {
+                font-weight: 400;
+                font-size: 12px;
+                color: #17181d;
+            }
+
+            & cite {
+                display: block;
+                height: 4px;
+                width: 100%;
+                background: var(--tp-grey-color);
+                border-radius: 5px;
+                position: relative;
+                margin-top: 5px;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 44px;
+                    height: 4px;
+                    background-color: var(--tp-primary-color-2);
+                    top: 0;
+                    left: 0;
+                    border-radius: 2px;
+                    @include transition(.3s linear);
+                }
+
+                &.tp-border-2 {
+                    &::after {
+                        background-color: #8154DA;
+                    }
+                }
+            }
+
+            &:hover {
+                & cite {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &-member {
+            margin-bottom: 0;
+
+            & span {
+                & i {
+                    font-weight: 600;
+                    font-size: 18px;
+                    color: var(--tp-primary-color-2);
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &-total {
+        &-user {
+            & i {
+                font-weight: 700;
+                font-size: 24px;
+                color: var(--tp-white-color);
+                font-style: normal;
+            }
+        }
+    }
+}
+
+.tp-admin-wallet {
+    &-price {
+        color: var(--tp-primary-color-2);
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    &-icon {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 12.082px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+    }
+}
+
+.tp-ride {
+    &-earning {
+        & span {
+            color: var(--tp-green-color);
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+
+            & svg {
+                margin-left: 4px;
+            }
+        }
+
+        &-text {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--tp-heading-color) !important;
+        }
+    }
+}
+
+.tp-withdraw {
+    &-amount {
+        color: var(--tp-heading-color);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
+
+    &-text {
+        & p {
+            font-family: var(--tp-font-2);
+            color: var(--tp-grey-color-2);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            margin-bottom: 0;
+
+            @media #{$xl} {
+                font-size: 11px;
+            }
+        }
+    }
+
+    &-box {
+        border-radius: 8px;
+        background: var(--tp-grey-color);
+        padding: 12px;
+        transition: .2s ease-in-out;
+
+        @media #{$xl} {
+            padding: 12px 7px;
+        }
+
+        @media #{$xs} {
+            padding: 10px;
+        }
+
+        &.box {
+            &-1 {
+                margin-right: -7px;
+            }
+
+            &-2 {
+                margin-left: -7px;
+            }
+        }
+
+        &:hover {
+            @include transform(translateY(-5px));
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+        }
+    }
+}
